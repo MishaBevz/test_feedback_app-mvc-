@@ -154,8 +154,9 @@ class PostsController{
                     // И добавляем данные в таблицу:
                     $postAdd = Posts::AddPostAndImage($name,$email_validate,$image,$message,$date);
                     echo "<br><br>" . "Отзыв успешно отправлен.После проверки ваш отзыв появится на странице.";
-                    return $postAdd;
                     header('Location: /');
+                    return $postAdd;
+                    
                 }else {
                     echo "<br><br>" . "Введенные данные некорректные" ;
                 }
@@ -173,8 +174,9 @@ class PostsController{
                     $postAdd = Posts::AddPostWithoutImage($name,$email_validate,$message,$date);
                     echo "<br><br>" . "Некорректный формат файла.Доступные форматы:PNG,JPEG,GIF.";
                     echo "<br><br>" . "Отзыв отправлен,но без загруженного файла.После проверки ваш отзыв появится на странице.";
-                    return $postAdd;
                     header('Location: /');
+                    return $postAdd;
+                    
                 } else {
                     echo "<br><br>" . "Введенные данные некорректные" ;
                 }
